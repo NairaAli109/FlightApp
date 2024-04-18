@@ -1,14 +1,14 @@
 
-import 'package:fligth_app/presentation/screens/explore/widgets/explore_body.dart';
-import 'package:fligth_app/presentation/screens/explore/widgets/helpful_info_images.dart';
-import 'package:fligth_app/presentation/screens/explore/widgets/passengers_container.dart';
-import 'package:fligth_app/presentation/screens/explore/widgets/tour_and_date.dart';
+import 'package:fligth_app/presentation/screens/main_page/widgets/main_page_white_container.dart';
+import 'package:fligth_app/presentation/screens/main_page/widgets/helpful_info_images.dart';
+import 'package:fligth_app/presentation/screens/main_page/widgets/passengers_Field.dart';
+import 'package:fligth_app/presentation/screens/main_page/widgets/tour_and_date_filed.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../core/widgets/app_button.dart';
 import '../../core/widgets/header_text.dart';
 import '../../core/widgets/padding.dart';
-import '../find_tour_button/find_tour_button_view.dart';
+import '../air_tour_search_result/air_tour_search_result_view.dart';
 
 class ExploreView extends StatefulWidget {
   const ExploreView({super.key});
@@ -19,13 +19,6 @@ class ExploreView extends StatefulWidget {
 
 class _ExploreViewState extends State<ExploreView> {
 
-  void displayBottomSheet() {
-    showModalBottomSheet(
-        isScrollControlled: true,
-        useSafeArea: true,
-        context: context,
-        builder: (context) =>  const FindTourButtonView());
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +26,7 @@ class _ExploreViewState extends State<ExploreView> {
       children: [
         Expanded(
             child: SingleChildScrollView(
-          child: ExploreContainer(
+          child: MainPageWhiteContainer(
             bottomLeftRaduis: 30,
             bottomRightRaduis: 30,
             topLeftRaduis: 0,
@@ -42,7 +35,7 @@ class _ExploreViewState extends State<ExploreView> {
                 top: 100.h,
                 start: 20.w,
                 end: 20.w,
-                // bottom: 30.h,
+                bottom: 30.h,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -50,21 +43,21 @@ class _ExploreViewState extends State<ExploreView> {
                     const SizedBox(
                       height: 30,
                     ),
-                    const ChooseTourAndDate(),
+                    const TourAndDateField(),
                     const SizedBox(
                       height: 20,
                     ),
-                    const PassengersContainer(),
+                    const PassengersField(),
                     const SizedBox(
                       height: 20,
                     ),
                     AppButton(
                       onTap: () {
                         setState(() {
-                          displayBottomSheet();
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>const AirTourSearchResultView() ));
                         });
                       },
-                      text: "Find Tour",
+                      text: "Find Tour", size: 20,
                     )
                   ],
                 )),
@@ -73,7 +66,7 @@ class _ExploreViewState extends State<ExploreView> {
         const SizedBox(
           height: 25,
         ),
-        ExploreContainer(
+        MainPageWhiteContainer(
             height: 235,
             bottomLeftRaduis: 0,
             bottomRightRaduis: 0,

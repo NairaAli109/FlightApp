@@ -9,8 +9,16 @@ import '../../core/widgets/header_text.dart';
 import '../../core/widgets/padding.dart';
 import '../home/all_screens.dart';
 
-class ConfirmationCodeView extends StatelessWidget {
-  ConfirmationCodeView({super.key});
+class ConfirmationCodeView extends StatefulWidget {
+  const ConfirmationCodeView({super.key});
+
+  @override
+  State<ConfirmationCodeView> createState() => _ConfirmationCodeViewState();
+}
+
+class _ConfirmationCodeViewState extends State<ConfirmationCodeView> {
+
+  var formKey = GlobalKey<FormState>();
 
   var confirmationCodeController1 = TextEditingController();
   var confirmationCodeController2 = TextEditingController();
@@ -24,47 +32,102 @@ class ConfirmationCodeView extends StatelessWidget {
         backgroundColor: AppColors.secondaryColor,
         body: SingleChildScrollView(
           child: PaddingDynamic(
-            top: 100.h,
-            start: 25.w,
-            end: 25.w,
-            bottom: 30.h,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                HeaderText(
-                  text: 'Enter the \nconfirmation code',
-                ),
-                SizedBox(
-                  height: 150.h,
-                ),
-                Row(
+              top: 100.h,
+              start: 25.w,
+              end: 25.w,
+              bottom: 30.h,
+              child: Form(
+                key: formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ConfirmationCodeTextFormField(controller: confirmationCodeController1,),
-                    const SizedBox(width: 10,),
-                    ConfirmationCodeTextFormField(controller: confirmationCodeController2,),
-                    const SizedBox(width: 10,),
-                    ConfirmationCodeTextFormField(controller: confirmationCodeController3,),
-                    const SizedBox(width: 10,),
-                    ConfirmationCodeTextFormField(controller: confirmationCodeController4,),
-                    const SizedBox(width: 10,),
-                    ConfirmationCodeTextFormField(controller: confirmationCodeController5,),
+                    HeaderText(
+                      text: 'Enter the \nconfirmation code',
+                    ),
+                    SizedBox(
+                      height: 150.h,
+                    ),
+                    Row(
+                      children: [
+                        ConfirmationCodeTextFormField(
+                          controller: confirmationCodeController1,
+                          validator: (String?value) {
+                            if (value!.isEmpty) {
+                              return "this field is required";
+                            }
+                            return null;
+                          },
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        ConfirmationCodeTextFormField(
+                          controller: confirmationCodeController2,
+                          validator: (String?value) {
+                            if (value!.isEmpty) {
+                              return "this field is required";
+                            }
+                            return null;
+                          },
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        ConfirmationCodeTextFormField(
+                          controller: confirmationCodeController3,
+                          validator: (String?value) {
+                            if (value!.isEmpty) {
+                              return "this field is required";
+                            }
+                            return null;
+                          },
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        ConfirmationCodeTextFormField(
+                          controller: confirmationCodeController4,
+                          validator: (String?value) {
+                            if (value!.isEmpty) {
+                              return "this field is required";
+                            }
+                            return null;
+                          },
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        ConfirmationCodeTextFormField(
+                          controller: confirmationCodeController5,
+                          validator: (String?value) {
+                            if (value!.isEmpty) {
+                              return "this field is required";
+                            }
+                            return null;
+                          },
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 355.h,
+                    ),
+                    AppButton(
+                      onTap: () {
+                        setState(() {
+                          if (formKey.currentState!.validate()) {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const AllScreens()));
+                          }
+                        });
+                      },
+                      text: 'Next', size: 20,
+                    ),
                   ],
                 ),
-                SizedBox(
-                  height: 355.h,
-                ),
-                AppButton(
-                  onTap: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const MainScreens()));
-                  },
-                  text: 'Next',
-                ),
-              ],
-            ),
-          ),
+              )),
         ));
   }
 }
+

@@ -3,11 +3,11 @@
 import 'package:flutter/material.dart';
 import '../../../core/widgets/app_button.dart';
 import '../../../core/widgets/padding.dart';
-import '../../explore/widgets/passengers_container.dart';
-import '../../explore/widgets/tour_and_date.dart';
+import '../../main_page/widgets/passengers_Field.dart';
+import '../../main_page/widgets/tour_and_date_filed.dart';
 
-class FindTourButtonSetting extends StatelessWidget {
-  FindTourButtonSetting({super.key});
+class SettingIconButton extends StatelessWidget {
+  SettingIconButton({super.key});
 
   var searchLocationController = TextEditingController();
 
@@ -20,13 +20,13 @@ class FindTourButtonSetting extends StatelessWidget {
       bottom: 20,
       child: SizedBox(
         height: double.infinity,
-        child:Column(
+        child: Column(
           children: [
-            const ChooseTourAndDate(),
+            const TourAndDateField(),
             const SizedBox(
               height: 20,
             ),
-            const PassengersContainer(),
+            const PassengersField(),
             const SizedBox(
               height: 20,
             ),
@@ -34,7 +34,7 @@ class FindTourButtonSetting extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
               },
-              text: "Apply",
+              text: "Apply", size: 20,
             )
           ],
         ),
@@ -42,5 +42,3 @@ class FindTourButtonSetting extends StatelessWidget {
     );
   }
 }
-
-

@@ -4,8 +4,8 @@ import '../../../core/constants/colors.dart';
 import '../../../core/widgets/padding.dart';
 import 'add_remove_passenger_button.dart';
 
-class PassengersContainer extends StatelessWidget {
-  const PassengersContainer({super.key});
+class PassengersField extends StatelessWidget {
+  const PassengersField({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class PassengersContainer extends StatelessWidget {
             ),
           ],
         ),
-        child:  const PaddingHorizontal(
+        child: const PaddingHorizontal(
           value: 20,
           child: Row(
             children: [
@@ -43,7 +43,6 @@ class PassengersContainer extends StatelessWidget {
               AddRemovePassengersButton(),
             ],
           ),
-        )
-    );
+        ));
   }
 }

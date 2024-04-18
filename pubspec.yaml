@@ -50,6 +50,8 @@ dependencies:
   dio: ^5.3.3
   bottom_sheet_bar: ^2.3.9
   date_picker_plus: ^3.0.2
+  easy_stepper: ^0.8.3
+  flutter_credit_card: ^4.0.1
 
 dev_dependencies:
   flutter_test:

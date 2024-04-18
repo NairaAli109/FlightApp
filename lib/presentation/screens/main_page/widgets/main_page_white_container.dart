@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 
 import '../../../core/constants/colors.dart';
 
-class ExploreContainer extends StatelessWidget {
-  ExploreContainer(
-      {super.key,
-      required this.child,
-      required this.topLeftRaduis,
-      required this.topRightRaduis,
-      required this.bottomRightRaduis,
-      required this.bottomLeftRaduis,
-        this.height,
-      });
+class MainPageWhiteContainer extends StatelessWidget {
+  MainPageWhiteContainer({
+    super.key,
+    required this.child,
+    required this.topLeftRaduis,
+    required this.topRightRaduis,
+    required this.bottomRightRaduis,
+    required this.bottomLeftRaduis,
+    this.height,
+  });
 
   double bottomLeftRaduis = 0;
   double bottomRightRaduis = 0;

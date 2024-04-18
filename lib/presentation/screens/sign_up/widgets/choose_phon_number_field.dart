@@ -1,15 +1,20 @@
 // ignore_for_file: avoid_print, unused_import
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
 import '../../../core/constants/colors.dart';
 
-class ChooseCountryCodeField extends StatelessWidget {
-  const ChooseCountryCodeField({super.key});
+class ChoosePhoneNumberField extends StatelessWidget {
+   ChoosePhoneNumberField({super.key,required this.phoneController});
+
+  TextEditingController phoneController;
 
   @override
   Widget build(BuildContext context) {
     return  IntlPhoneField(
+      initialCountryCode: 'EG',
+      controller: phoneController,
       decoration:   const InputDecoration(
         labelText: 'Phone Number',
         border: OutlineInputBorder(

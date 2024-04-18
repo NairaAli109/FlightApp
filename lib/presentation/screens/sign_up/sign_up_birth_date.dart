@@ -63,7 +63,7 @@ class _AddBirthDateViewState extends State<AddBirthDateView> {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>  ConfirmationCodeView()));
-                },
+                }, size: 20,
               ),
             ],
           ),

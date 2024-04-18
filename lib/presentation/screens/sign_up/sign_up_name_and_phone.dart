@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable, avoid_print
 
 import 'package:fligth_app/presentation/screens/sign_up/sign_up_birth_date.dart';
-import 'package:fligth_app/presentation/screens/sign_up/widgets/choose_country_field.dart';
+import 'package:fligth_app/presentation/screens/sign_up/widgets/choose_phon_number_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../core/constants/colors.dart';
@@ -18,7 +18,7 @@ class SignUpView extends StatefulWidget {
 }
 
 class _SignUpViewState extends State<SignUpView> {
-  var formKey = GlobalKey();
+  var formKey = GlobalKey<FormState>();
   var phoneController = TextEditingController();
   var firstNameController = TextEditingController();
   var lastNameController = TextEditingController();
@@ -44,7 +44,9 @@ class _SignUpViewState extends State<SignUpView> {
               SizedBox(
                 height: 100.h,
               ),
-              const ChooseCountryCodeField(),
+               ChoosePhoneNumberField(
+                 phoneController: phoneController,
+               ),
               SizedBox(
                 height: 20.h,
               ),
@@ -79,11 +81,13 @@ class _SignUpViewState extends State<SignUpView> {
               AppButton(
                 text: 'Next',
                 onTap: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const AddBirthDateView()));
-                },
+                  if (formKey.currentState!.validate()){
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AddBirthDateView()));
+                  }
+                }, size: 20,
               ),
             ],
           ),

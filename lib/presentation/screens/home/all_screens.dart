@@ -4,19 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 import '../../core/constants/colors.dart';
-import '../explore/explore_view.dart';
 import '../favorites/favorites_view.dart';
 import '../flight/widgets/Flights_view.dart';
+import '../main_page/main_page_view.dart';
 import '../profile/profile_view.dart';
 
-class MainScreens extends StatefulWidget {
-  const MainScreens({super.key});
+class AllScreens extends StatefulWidget {
+  const AllScreens({super.key});
 
   @override
-  State<MainScreens> createState() => _MainScreensState();
+  State<AllScreens> createState() => _AllScreensState();
 }
 
-class _MainScreensState extends State<MainScreens> {
+class _AllScreensState extends State<AllScreens> {
 
   int currentIndex = 0;
   List<Widget> screens =[
@@ -36,11 +36,6 @@ class _MainScreensState extends State<MainScreens> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[100],
-      // appBar: AppBar(
-      //   title: Text(
-      //     appBarTitle[currentIndex],
-      //   ),
-      // ),
       body: screens[currentIndex],
       bottomNavigationBar:CurvedNavigationBar(
         color: AppColors.lightBlue,

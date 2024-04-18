@@ -5,10 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../constants/colors.dart';
 
 class AppButton extends StatelessWidget {
-   AppButton({super.key,required this.onTap, required this.text});
+   AppButton({super.key,required this.onTap, required this.text, required this.size});
 
   final VoidCallback onTap;
   String text;
+  double? size;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class AppButton extends StatelessWidget {
               text,
               style: TextStyle(
                   color: AppColors.secondaryColor,
-                  fontSize: 20,
+                  fontSize: size,
                   fontWeight: FontWeight.w500),
             ),
           )),
