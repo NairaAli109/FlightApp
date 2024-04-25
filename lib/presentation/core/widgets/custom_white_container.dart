@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../core/constants/colors.dart';
+import '../constants/colors.dart';
 
-class MainPageWhiteContainer extends StatelessWidget {
-  MainPageWhiteContainer({
+class CustomWhiteContainer extends StatelessWidget {
+  CustomWhiteContainer({
     super.key,
     required this.child,
     required this.topLeftRaduis,
@@ -15,10 +15,10 @@ class MainPageWhiteContainer extends StatelessWidget {
     this.height,
   });
 
-  double bottomLeftRaduis = 0;
-  double bottomRightRaduis = 0;
-  double topLeftRaduis = 0;
-  double topRightRaduis = 0;
+  double bottomLeftRaduis;
+  double bottomRightRaduis;
+  double topLeftRaduis;
+  double topRightRaduis;
   Widget child;
   double? height;
 

@@ -1,5 +1,5 @@
 
-import 'package:fligth_app/presentation/screens/main_page/widgets/main_page_white_container.dart';
+import 'package:fligth_app/presentation/core/widgets/custom_white_container.dart';
 import 'package:fligth_app/presentation/screens/main_page/widgets/helpful_info_images.dart';
 import 'package:fligth_app/presentation/screens/main_page/widgets/passengers_Field.dart';
 import 'package:fligth_app/presentation/screens/main_page/widgets/tour_and_date_filed.dart';
@@ -26,7 +26,7 @@ class _ExploreViewState extends State<ExploreView> {
       children: [
         Expanded(
             child: SingleChildScrollView(
-          child: MainPageWhiteContainer(
+          child: CustomWhiteContainer(
             bottomLeftRaduis: 30,
             bottomRightRaduis: 30,
             topLeftRaduis: 0,
@@ -63,10 +63,10 @@ class _ExploreViewState extends State<ExploreView> {
                 )),
           ),
         )),
-        const SizedBox(
-          height: 25,
+         SizedBox(
+          height: 10.h,
         ),
-        MainPageWhiteContainer(
+        CustomWhiteContainer(
             height: 235,
             bottomLeftRaduis: 0,
             bottomRightRaduis: 0,
