@@ -1,4 +1,4 @@
-
+import 'package:fligth_app/presentation/screens/sign_up/widgets/date_picker_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:scroll_date_picker/scroll_date_picker.dart';
@@ -17,59 +17,35 @@ class AddBirthDateView extends StatefulWidget {
 
 class _AddBirthDateViewState extends State<AddBirthDateView> {
 
-  DateTime _selectedDate = DateTime.now();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(backgroundColor: AppColors.secondaryColor),
         backgroundColor: AppColors.secondaryColor,
-      body: SingleChildScrollView(
-        child: PaddingDynamic(
-          start: 25.w,
-          top: 100.h,
-          end: 25.w,
-          bottom: 30.h,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              HeaderText(
-                text: 'Select Your \nDate of Birth',
-              ),
-              SizedBox(
-                height: 150.h,
-              ),
-              // Text(
-              //   "date: $_selectedDate"
-              // ),
-              SizedBox(
-                height: 250.h,
-                child: ScrollDatePicker(
-                  selectedDate: _selectedDate,
-                  locale: const Locale('en'),
-                  onDateTimeChanged: (DateTime value) {
-                    setState(() {
-                      _selectedDate = value;
-                    });
+        body: SingleChildScrollView(
+          child: PaddingDynamic(
+            start: 25.w,
+            end: 25.w,
+            bottom: 30.h,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                HeaderText(text: 'Select Your \nDate of Birth', bottomPadding: 100.h,),
+                const DatePickerField(),
+                AppButton(
+                  text: 'Next',
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const ConfirmationCodeView()));
                   },
+                  size: 20,
                 ),
-              ),
-              SizedBox(
-                height: 170.h,
-              ),
-              AppButton(
-                text: 'Next',
-                onTap: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>  ConfirmationCodeView()));
-                }, size: 20,
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-      )
-    );
+        ));
   }
 }
-

@@ -1,8 +1,9 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:fligth_app/presentation/screens/sign_up/widgets/confirmation_code_form_field.dart';
+import 'package:fligth_app/presentation/screens/sign_up/widgets/confirmation_code_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pinput/pinput.dart';
 import '../../core/constants/colors.dart';
 import '../../core/widgets/app_button.dart';
 import '../../core/widgets/header_text.dart';
@@ -19,20 +20,15 @@ class ConfirmationCodeView extends StatefulWidget {
 class _ConfirmationCodeViewState extends State<ConfirmationCodeView> {
 
   var formKey = GlobalKey<FormState>();
-
-  var confirmationCodeController1 = TextEditingController();
-  var confirmationCodeController2 = TextEditingController();
-  var confirmationCodeController3 = TextEditingController();
-  var confirmationCodeController4 = TextEditingController();
-  var confirmationCodeController5 = TextEditingController();
+  final focusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(backgroundColor: AppColors.secondaryColor),
         backgroundColor: AppColors.secondaryColor,
         body: SingleChildScrollView(
           child: PaddingDynamic(
-              top: 100.h,
               start: 25.w,
               end: 25.w,
               bottom: 30.h,
@@ -41,79 +37,13 @@ class _ConfirmationCodeViewState extends State<ConfirmationCodeView> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    HeaderText(
-                      text: 'Enter the \nconfirmation code',
-                    ),
-                    SizedBox(
-                      height: 150.h,
-                    ),
-                    Row(
-                      children: [
-                        ConfirmationCodeTextFormField(
-                          controller: confirmationCodeController1,
-                          validator: (String?value) {
-                            if (value!.isEmpty) {
-                              return "this field is required";
-                            }
-                            return null;
-                          },
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        ConfirmationCodeTextFormField(
-                          controller: confirmationCodeController2,
-                          validator: (String?value) {
-                            if (value!.isEmpty) {
-                              return "this field is required";
-                            }
-                            return null;
-                          },
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        ConfirmationCodeTextFormField(
-                          controller: confirmationCodeController3,
-                          validator: (String?value) {
-                            if (value!.isEmpty) {
-                              return "this field is required";
-                            }
-                            return null;
-                          },
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        ConfirmationCodeTextFormField(
-                          controller: confirmationCodeController4,
-                          validator: (String?value) {
-                            if (value!.isEmpty) {
-                              return "this field is required";
-                            }
-                            return null;
-                          },
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        ConfirmationCodeTextFormField(
-                          controller: confirmationCodeController5,
-                          validator: (String?value) {
-                            if (value!.isEmpty) {
-                              return "this field is required";
-                            }
-                            return null;
-                          },
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 355.h,
-                    ),
+                    HeaderText(text: 'Enter the \nconfirmation code,', bottomPadding: 100.h,),
+                    const ConfirmationCodeField(),
                     AppButton(
                       onTap: () {
                         setState(() {
+                          focusNode.unfocus();
+                          formKey.currentState!.validate();
                           if (formKey.currentState!.validate()) {
                             Navigator.pushReplacement(
                                 context,
@@ -122,7 +52,8 @@ class _ConfirmationCodeViewState extends State<ConfirmationCodeView> {
                           }
                         });
                       },
-                      text: 'Next', size: 20,
+                      text: 'Next',
+                      size: 20,
                     ),
                   ],
                 ),
@@ -130,4 +61,3 @@ class _ConfirmationCodeViewState extends State<ConfirmationCodeView> {
         ));
   }
 }
-

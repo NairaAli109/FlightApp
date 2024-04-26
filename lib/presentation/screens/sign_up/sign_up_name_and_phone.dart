@@ -2,6 +2,7 @@
 
 import 'package:fligth_app/presentation/screens/sign_up/sign_up_birth_date.dart';
 import 'package:fligth_app/presentation/screens/sign_up/widgets/choose_phon_number_field.dart';
+import 'package:fligth_app/presentation/screens/sign_up/widgets/signup_name_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../core/constants/colors.dart';
@@ -38,56 +39,27 @@ class _SignUpViewState extends State<SignUpView> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              HeaderText(
-                text: 'Enter Your Data',
-              ),
-              SizedBox(
-                height: 100.h,
-              ),
-               ChoosePhoneNumberField(
-                 phoneController: phoneController,
-               ),
-              SizedBox(
-                height: 20.h,
-              ),
-              AppTextFormField(
-                labelText: 'First Name',
-                controller: firstNameController,
-                type: TextInputType.text,
-                validator: (String? value) {
-                  if (value!.isEmpty) {
-                    return " please enter your first name";
-                  }
-                  return null;
-                },
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              AppTextFormField(
-                labelText: 'Last Name',
-                controller: lastNameController,
-                type: TextInputType.text,
-                validator: (String? value) {
-                  if (value!.isEmpty) {
-                    return " please enter your last name";
-                  }
-                  return null;
-                },
-              ),
-              SizedBox(
-                height: 250.h,
+              HeaderText(text: 'Enter Your Data', bottomPadding: 100.h,),
+              ChoosePhoneNumberField(phoneController: phoneController),
+              NameField(
+                  firstNameController: firstNameController,
+                  lastNameController: lastNameController,
               ),
               AppButton(
                 text: 'Next',
                 onTap: () {
-                  if (formKey.currentState!.validate()){
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const AddBirthDateView()));
-                  }
-                }, size: 20,
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AddBirthDateView()));
+                  // if (formKey.currentState!.validate()) {
+                  //   Navigator.push(
+                  //       context,
+                  //       MaterialPageRoute(
+                  //           builder: (context) => const AddBirthDateView()));
+                  // }
+                },
+                size: 20,
               ),
             ],
           ),
