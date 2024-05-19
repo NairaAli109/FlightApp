@@ -1,3 +1,5 @@
+import 'package:fligth_app/presentation/screens/air_tours/widgets/pilot_info_section/pilot_details_header_text.dart';
+import 'package:fligth_app/presentation/screens/air_tours/widgets/pilot_info_section/pilot_details_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -11,7 +13,6 @@ class LicenseContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppContainer(
       width: 318.w,
-      height: 70.h,
       color: AppColors.greyColor,
       borderRadius: 4,
       child:PaddingDynamic(
@@ -19,26 +20,12 @@ class LicenseContainer extends StatelessWidget {
         start: 10.w,
         bottom: 10.h,
         end: 10.w,
-        child: const Column(
+        child:  Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              "License",
-              style: TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.darkGreyColor
-              ),
-            ),
-            Text(
-              "Commercial Pilot's License - CPL",
-              style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.bodyTextColor
-              ),
-            ),
+            PilotDetailsHeaderText(headerText: "License"),
+            PilotDetailsText(text: "Commercial Pilot's License - CPL"),
           ],
         ),
       ) ,

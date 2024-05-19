@@ -24,7 +24,7 @@ class PopularFlightsSection extends StatelessWidget {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: Image.asset(
-                        Assets.imagesExploreHelpImg1,
+                        Assets.planeImg1,
                         height: 118.h,
                         width: 118.w,
                         fit: BoxFit.fill,

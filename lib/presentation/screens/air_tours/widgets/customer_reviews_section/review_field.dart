@@ -55,7 +55,7 @@ class ReviewField extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: 15.h,),
-                    const Rate(),
+                    const PilotRate(),
                     SizedBox(height: 15.h,),
                     const ReviewComment(),
                   ],

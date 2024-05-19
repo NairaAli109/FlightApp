@@ -17,7 +17,7 @@ class FlightInfo extends StatelessWidget {
       bottom: 20.h,
       child: AppContainer(
         width: double.infinity,
-        height: 750.h,
+        // height: 750.h,
         color: AppColors.secondaryColor,
         borderRadius: 30,
         child: PaddingDynamic(
@@ -25,22 +25,12 @@ class FlightInfo extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BodyHeaderText(
-                text: 'Flight Duration',
-              ),
-              FlightDurationButtons(
-                text: '20 min',
-              ),
-              BodyHeaderText(
-                text: 'Start of Flight',
-              ),
-              FlightDurationButtons(
-                text: '7:00',
-              ),
-              BodyHeaderText(
-                text: 'Flight Route',
-              ),
-              const FlightRoute(),
+              BodyHeaderText(text: 'Flight Duration'),
+              FlightDurationButtons(text: '20 min'),
+              BodyHeaderText(text: 'Start of Flight'),
+              FlightDurationButtons(text: '7:00'),
+              BodyHeaderText(text: 'Flight Route'),
+              const FlightRouteAirFieldContainer(),
               const FlightTourStepper(),
             ],
           ),

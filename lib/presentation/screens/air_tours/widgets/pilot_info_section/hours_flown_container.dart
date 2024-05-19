@@ -1,8 +1,9 @@
+import 'package:fligth_app/presentation/screens/air_tours/widgets/pilot_info_section/pilot_details_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../core/constants/colors.dart';
 import '../../../../core/widgets/padding.dart';
+import 'pilot_details_header_text.dart';
 
 class HourFlownContainer extends StatelessWidget {
   const HourFlownContainer({super.key});
@@ -11,33 +12,18 @@ class HourFlownContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppContainer(
         width: 149.w,
-        height: 61.h,
         color: AppColors.greyColor,
         borderRadius: 4,
         child: PaddingDynamic(
           top: 5.h,
           start: 5.w,
           bottom: 5.h,
-          child: const Column(
+          child:  Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                "Hours flown",
-                style: TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.darkGreyColor
-                ),
-              ),
-              Text(
-                "1 250 hours",
-                style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.bodyTextColor
-                ),
-              ),
+              PilotDetailsHeaderText(headerText: "Hours flown"),
+              PilotDetailsText(text: "1 250 hours"),
             ],
           ),
         )

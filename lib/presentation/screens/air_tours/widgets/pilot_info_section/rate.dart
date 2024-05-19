@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/constants/colors.dart';
 
-class Rate extends StatelessWidget {
-  const Rate({super.key});
+class PilotRate extends StatelessWidget {
+  const PilotRate({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +35,7 @@ class Rate extends StatelessWidget {
           color: Colors.yellow,
           size: 17,
         ),
-        SizedBox(
-          width: 5.w,
-        ),
+        SizedBox(width: 5.w),
         const Text(
           "5",
           style: TextStyle(
