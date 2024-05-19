@@ -1,4 +1,3 @@
-
 import 'package:fligth_app/presentation/core/widgets/custom_white_container.dart';
 import 'package:fligth_app/presentation/screens/main_page/widgets/helpful_info_images.dart';
 import 'package:fligth_app/presentation/screens/main_page/widgets/passengers_Field.dart';
@@ -18,8 +17,6 @@ class ExploreView extends StatefulWidget {
 }
 
 class _ExploreViewState extends State<ExploreView> {
-
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -40,30 +37,29 @@ class _ExploreViewState extends State<ExploreView> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     HeaderText(text: "Extreme \nairplane flight"),
-                    const SizedBox(
-                      height: 30,
-                    ),
+                    const SizedBox(height: 30),
                     const TourAndDateField(),
-                    const SizedBox(
-                      height: 20,
-                    ),
+                    const SizedBox(height: 20),
                     const PassengersField(),
-                    const SizedBox(
-                      height: 20,
-                    ),
+                    const SizedBox(height: 20),
                     AppButton(
                       onTap: () {
                         setState(() {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>const AirTourSearchResultView() ));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const AirTourSearchResultView()));
                         });
                       },
-                      text: "Find Tour", size: 20,
+                      text: "Find Tour",
+                      textSize: 20,
                     )
                   ],
                 )),
           ),
         )),
-         SizedBox(
+        SizedBox(
           height: 10.h,
         ),
         CustomWhiteContainer(

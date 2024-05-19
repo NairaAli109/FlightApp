@@ -12,6 +12,7 @@ class TourLocationField extends StatefulWidget {
 }
 
 class _TourLocationFieldState extends State<TourLocationField> {
+
   void displayBottomSheet() {
     showModalBottomSheet(
         isScrollControlled: true,
@@ -37,9 +38,7 @@ class _TourLocationFieldState extends State<TourLocationField> {
           child: Row(
             children: [
               const Icon(Icons.location_on_sharp),
-              const SizedBox(
-                width: 10,
-              ),
+              const SizedBox(width: 10),
               Text(
                 "Where to find an airplane tour?",
                 style: TextStyle(

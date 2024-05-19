@@ -50,7 +50,7 @@ class AirToursView extends StatelessWidget {
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>const PaymentView()));
                     },
-                    text: 'Book for 10,000 ₽', size: 16,
+                    text: 'Book for 10,000 ₽', textSize: 16,
                   )
                   )
                 ],

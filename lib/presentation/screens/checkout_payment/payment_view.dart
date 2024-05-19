@@ -149,7 +149,7 @@ class _PaymentViewState extends State<PaymentView> {
                   end: 18.w,
                   child:   AppButton(onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>const SuccessPaymentView()));
-                  }, text: "Pay", size: 16)
+                  }, text: "Pay", textSize: 16)
               )
             ],
           ),

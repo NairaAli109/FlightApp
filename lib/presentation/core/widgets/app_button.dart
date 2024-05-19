@@ -5,11 +5,22 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../constants/colors.dart';
 
 class AppButton extends StatelessWidget {
-   AppButton({super.key,required this.onTap, required this.text, required this.size});
+  AppButton({
+    super.key,
+    required this.onTap,
+    required this.text,
+    required this.textSize,
+    this.buttonColor,
+    this.buttonBorderColor,
+    this.textColor,
+  });
 
   final VoidCallback onTap;
   String text;
-  double? size;
+  double? textSize;
+  Color? buttonColor;
+  Color? buttonBorderColor;
+  Color? textColor;
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +30,16 @@ class AppButton extends StatelessWidget {
           width: double.infinity,
           height: 50.h,
           decoration: BoxDecoration(
-              color: AppColors.primaryColor,
-              borderRadius: BorderRadius.circular(10)),
+              color: buttonColor ?? AppColors.primaryColor,
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(
+                  color: buttonBorderColor ?? AppColors.transparentColor)),
           child: Center(
             child: Text(
               text,
               style: TextStyle(
-                  color: AppColors.secondaryColor,
-                  fontSize: size,
+                  color: textColor ?? AppColors.secondaryColor,
+                  fontSize: textSize,
                   fontWeight: FontWeight.w500),
             ),
           )),

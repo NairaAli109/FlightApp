@@ -53,7 +53,7 @@ class _ConfirmationCodeViewState extends State<ConfirmationCodeView> {
                         });
                       },
                       text: 'Next',
-                      size: 20,
+                      textSize: 20,
                     ),
                   ],
                 ),

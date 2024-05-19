@@ -34,7 +34,7 @@ class SettingIconButton extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
               },
-              text: "Apply", size: 20,
+              text: "Apply", textSize: 20,
             )
           ],
         ),

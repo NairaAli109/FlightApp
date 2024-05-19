@@ -59,7 +59,7 @@ class _SignUpViewState extends State<SignUpView> {
                   //           builder: (context) => const AddBirthDateView()));
                   // }
                 },
-                size: 20,
+                textSize: 20,
               ),
             ],
           ),

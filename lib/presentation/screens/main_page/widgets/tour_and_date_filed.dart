@@ -5,14 +5,15 @@ import '../../../core/constants/colors.dart';
 import 'date_picker_field.dart';
 
 class TourAndDateField extends StatefulWidget {
-  const TourAndDateField({super.key,});
+  const TourAndDateField({
+    super.key,
+  });
 
   @override
   State<TourAndDateField> createState() => _TourAndDateFieldState();
 }
 
 class _TourAndDateFieldState extends State<TourAndDateField> {
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -34,11 +35,7 @@ class _TourAndDateFieldState extends State<TourAndDateField> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TourLocationField(),
-            Expanded(
-              child: Divider(
-                thickness: 0.7,
-              ),
-            ),
+            Expanded(child: Divider(thickness: 0.7)),
             DatePickerFiled(),
           ],
         ),
@@ -46,4 +43,3 @@ class _TourAndDateFieldState extends State<TourAndDateField> {
     );
   }
 }
-

@@ -5,8 +5,26 @@ import 'package:fligth_app/presentation/screens/profile/widgets/profile_setting_
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ProfileView extends StatelessWidget {
+import '../logout/logout_view.dart';
+
+class ProfileView extends StatefulWidget {
   const ProfileView({super.key});
+
+  @override
+  State<ProfileView> createState() => _ProfileViewState();
+}
+
+class _ProfileViewState extends State<ProfileView> {
+
+  void logoutBottomSheet() {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        useSafeArea: true,
+        enableDrag: true,
+        isDismissible: true,
+        context: context,
+        builder: (context) => const LogoutView());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,45 +34,50 @@ class ProfileView extends StatelessWidget {
         SizedBox(height: 15.h),
         Expanded(
             child: CustomWhiteContainer(
-          topLeftRaduis: 30,
-          topRightRaduis: 30,
-          bottomRightRaduis: 0,
-          bottomLeftRaduis: 0,
-          child: PaddingDynamic(
-            top: 35.h,
-            start: 20.w,
-            end: 20.w,
-            child: Column(
-              children: [
-                ProfileSettingContainers(
-                  text1: 'My cards',
-                  iconData1: Icons.credit_card,
-                  onTap1: () {},
-                  text2: 'My tickets',
-                  iconData2: Icons.event_note,
-                  onTap2: () {},
+              topLeftRaduis: 30,
+              topRightRaduis: 30,
+              bottomRightRaduis: 0,
+              bottomLeftRaduis: 0,
+              child: PaddingDynamic(
+                top: 35.h,
+                start: 20.w,
+                end: 20.w,
+                child: Column(
+                  children: [
+                    ProfileSettingContainers(
+                      text1: 'My cards',
+                      iconData1: Icons.credit_card,
+                      onTap1: () {},
+                      text2: 'My tickets',
+                      iconData2: Icons.event_note,
+                      onTap2: () {},
+                    ),
+                    ProfileSettingContainers(
+                      text1: 'Notifications',
+                      iconData1: Icons.notification_add,
+                      onTap1: () {},
+                      text2: 'Settings',
+                      iconData2: Icons.settings_sharp,
+                      onTap2: () {},
+                    ),
+                    ProfileSettingContainers(
+                      text1: 'Customer Service',
+                      iconData1: Icons.speaker_notes_outlined,
+                      onTap1: () {},
+                      text2: 'Logout',
+                      iconData2: Icons.logout_outlined,
+                      onTap2: () {
+                        setState(() {
+                          logoutBottomSheet();
+                        });
+                      },
+                    ),
+                  ],
                 ),
-                ProfileSettingContainers(
-                  text1: 'Notifications',
-                  iconData1: Icons.notification_add,
-                  onTap1: () {},
-                  text2: 'Settings',
-                  iconData2: Icons.settings_sharp,
-                  onTap2: () {},
-                ),
-                ProfileSettingContainers(
-                  text1: 'Customer Service',
-                  iconData1: Icons.speaker_notes_outlined,
-                  onTap1: () {},
-                  text2: 'Logout',
-                  iconData2: Icons.logout_outlined,
-                  onTap2: () {},
-                ),
-              ],
-            ),
-          ),
-        ))
+              ),
+            ))
       ],
     );
   }
 }
+

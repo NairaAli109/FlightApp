@@ -43,7 +43,7 @@ class _AirTourSearchResultViewState extends State<AirTourSearchResultView> {
                   start: 20.w,
                   end: 20.w,
                   bottom: 30.h,
-                  child: AppButton(onTap: () {}, text: "Show More", size: 20,))
+                  child: AppButton(onTap: () {}, text: "Show More", textSize: 20,))
             ],
           ),
         ),

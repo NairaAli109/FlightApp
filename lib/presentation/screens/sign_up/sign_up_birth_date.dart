@@ -41,7 +41,7 @@ class _AddBirthDateViewState extends State<AddBirthDateView> {
                             builder: (context) =>
                                 const ConfirmationCodeView()));
                   },
-                  size: 20,
+                  textSize: 20,
                 ),
               ],
             ),
