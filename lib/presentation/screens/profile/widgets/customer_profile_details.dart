@@ -16,7 +16,7 @@ class CustomerProfileDetails extends StatelessWidget {
         topRightRaduis: 0,
         bottomRightRaduis: 30,
         bottomLeftRaduis: 30,
-        height: 347.h,
+        height: 320.h,
         child: PaddingDynamic(
         bottom: 25.h,
           child: Column(

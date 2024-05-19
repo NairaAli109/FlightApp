@@ -1,7 +1,7 @@
 import 'package:fligth_app/presentation/core/widgets/custom_white_container.dart';
 import 'package:fligth_app/presentation/core/widgets/padding.dart';
 import 'package:fligth_app/presentation/screens/profile/widgets/customer_profile_details.dart';
-import 'package:fligth_app/presentation/screens/profile/widgets/profile_single_container.dart';
+import 'package:fligth_app/presentation/screens/profile/widgets/profile_setting_containers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -13,53 +13,47 @@ class ProfileView extends StatelessWidget {
     return Column(
       children: [
         const CustomerProfileDetails(),
-        const Spacer(),
-        CustomWhiteContainer(
-          height: 382.h,
+        SizedBox(height: 15.h),
+        Expanded(
+            child: CustomWhiteContainer(
           topLeftRaduis: 30,
           topRightRaduis: 30,
           bottomRightRaduis: 0,
           bottomLeftRaduis: 0,
           child: PaddingDynamic(
-            top: 30.h,
+            top: 35.h,
             start: 20.w,
             end: 20.w,
             child: Column(
               children: [
-                CustomSingleContainer(
-                  onTap: () {},
-                  text: 'Notifications',
-                  iconData: Icons.notification_add,
+                ProfileSettingContainers(
+                  text1: 'My cards',
+                  iconData1: Icons.credit_card,
+                  onTap1: () {},
+                  text2: 'My tickets',
+                  iconData2: Icons.event_note,
+                  onTap2: () {},
                 ),
-                CustomSingleContainer(
-                  onTap: () {},
-                  text: 'My tickets',
-                  iconData: Icons.event_note,
+                ProfileSettingContainers(
+                  text1: 'Notifications',
+                  iconData1: Icons.notification_add,
+                  onTap1: () {},
+                  text2: 'Settings',
+                  iconData2: Icons.settings_sharp,
+                  onTap2: () {},
                 ),
-                CustomSingleContainer(
-                  onTap: () {},
-                  text: 'My cards',
-                  iconData: Icons.credit_card,
-                ),
-                CustomSingleContainer(
-                  onTap: () {},
-                  text: 'Customer Service',
-                  iconData: Icons.speaker_notes_outlined,
-                ),
-                CustomSingleContainer(
-                  onTap: () {},
-                  text: 'Settings',
-                  iconData: Icons.settings_sharp,
-                ),
-                CustomSingleContainer(
-                  onTap: () {},
-                  text: 'Logout',
-                  iconData: Icons.logout_outlined,
+                ProfileSettingContainers(
+                  text1: 'Customer Service',
+                  iconData1: Icons.speaker_notes_outlined,
+                  onTap1: () {},
+                  text2: 'Logout',
+                  iconData2: Icons.logout_outlined,
+                  onTap2: () {},
                 ),
               ],
             ),
           ),
-        )
+        ))
       ],
     );
   }
