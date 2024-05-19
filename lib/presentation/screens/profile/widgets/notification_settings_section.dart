@@ -1,8 +1,7 @@
 import 'package:fligth_app/presentation/screens/profile/widgets/profile_setting_containers.dart';
 import 'package:flutter/material.dart';
-
-import '../../../settings/settings_view.dart';
 import '../../notifications/notifications_view.dart';
+import '../../settings/settings_view.dart';
 
 class NotificationsSettingsSection extends StatefulWidget {
   const NotificationsSettingsSection({super.key});
