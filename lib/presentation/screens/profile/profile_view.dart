@@ -1,30 +1,14 @@
 import 'package:fligth_app/presentation/core/widgets/custom_white_container.dart';
 import 'package:fligth_app/presentation/core/widgets/padding.dart';
+import 'package:fligth_app/presentation/screens/profile/widgets/cards_tickets_section.dart';
 import 'package:fligth_app/presentation/screens/profile/widgets/customer_profile_details.dart';
-import 'package:fligth_app/presentation/screens/profile/widgets/profile_setting_containers.dart';
+import 'package:fligth_app/presentation/screens/profile/widgets/notification_settings_section.dart';
+import 'package:fligth_app/presentation/screens/profile/widgets/services_logout_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../logout/logout_view.dart';
-
-class ProfileView extends StatefulWidget {
+class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
-
-  @override
-  State<ProfileView> createState() => _ProfileViewState();
-}
-
-class _ProfileViewState extends State<ProfileView> {
-
-  void logoutBottomSheet() {
-    showModalBottomSheet(
-        isScrollControlled: true,
-        useSafeArea: true,
-        enableDrag: true,
-        isDismissible: true,
-        context: context,
-        builder: (context) => const LogoutView());
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,36 +26,11 @@ class _ProfileViewState extends State<ProfileView> {
                 top: 35.h,
                 start: 20.w,
                 end: 20.w,
-                child: Column(
+                child: const Column(
                   children: [
-                    ProfileSettingContainers(
-                      text1: 'My cards',
-                      iconData1: Icons.credit_card,
-                      onTap1: () {},
-                      text2: 'My tickets',
-                      iconData2: Icons.event_note,
-                      onTap2: () {},
-                    ),
-                    ProfileSettingContainers(
-                      text1: 'Notifications',
-                      iconData1: Icons.notification_add,
-                      onTap1: () {},
-                      text2: 'Settings',
-                      iconData2: Icons.settings_sharp,
-                      onTap2: () {},
-                    ),
-                    ProfileSettingContainers(
-                      text1: 'Customer Service',
-                      iconData1: Icons.speaker_notes_outlined,
-                      onTap1: () {},
-                      text2: 'Logout',
-                      iconData2: Icons.logout_outlined,
-                      onTap2: () {
-                        setState(() {
-                          logoutBottomSheet();
-                        });
-                      },
-                    ),
+                    CardsTicketsSection(),
+                    NotificationsSettingsSection(),
+                    ServiceLogoutSection(),
                   ],
                 ),
               ),

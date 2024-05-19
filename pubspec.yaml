@@ -53,6 +53,8 @@ dependencies:
   easy_stepper: ^0.8.3
   flutter_credit_card: ^4.0.1
   image_picker: ^1.1.0
+  ticket_widget: ^1.0.2
+  barcode_widget: ^2.0.4
 
 dev_dependencies:
   flutter_test:
