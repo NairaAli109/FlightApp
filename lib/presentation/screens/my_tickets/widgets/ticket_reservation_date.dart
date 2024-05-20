@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/constants/colors.dart';
 
-class TicketReservationDate extends StatelessWidget {
-  TicketReservationDate({super.key,required this.date});
+class DateText extends StatelessWidget {
+  DateText({super.key,required this.date});
 
   String?date;
 

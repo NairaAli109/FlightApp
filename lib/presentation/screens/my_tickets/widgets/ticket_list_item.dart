@@ -10,7 +10,7 @@ class TicketListItem extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TicketReservationDate(date: 'Today',),
+        DateText(date: 'Today',),
         const TicketContainer(),
       ],
     );
