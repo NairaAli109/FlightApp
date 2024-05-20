@@ -15,11 +15,16 @@ class FlightInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return PaddingDynamic(
       bottom: 20.h,
-      child: AppContainer(
+      child: Container(
         width: double.infinity,
         // height: 750.h,
-        color: AppColors.secondaryColor,
-        borderRadius: 30,
+        decoration: BoxDecoration(
+          color: AppColors.secondaryColor,
+          borderRadius: const BorderRadius.only(
+            bottomLeft: Radius.circular(30),
+            bottomRight: Radius.circular(30),
+          ),
+        ),
         child: PaddingDynamic(
           top: 20.h,
           child: Column(

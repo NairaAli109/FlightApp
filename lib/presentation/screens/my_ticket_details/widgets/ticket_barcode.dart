@@ -8,15 +8,17 @@ class TicketBarcode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PaddingDynamic(
-        top: 15.h,
-        child: BarcodeWidget(
-          height: 120.h,
-          barcode: Barcode.code128(),
-          data: "673-843",
-          style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600),
-          textPadding: 15.h,
-          errorBuilder: (context, error) => Center(child: Text(error)),
-        ));
+    return Expanded(
+      child:PaddingDynamic(
+        top: 10.h,
+          child: BarcodeWidget(
+            height: 120.h,
+            barcode: Barcode.code128(),
+            data: "673-843",
+            style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600),
+            textPadding: 15.h,
+            errorBuilder: (context, error) => Center(child: Text(error)),
+          )),
+    );
   }
 }

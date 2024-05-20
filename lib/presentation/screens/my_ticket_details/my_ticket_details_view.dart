@@ -2,6 +2,7 @@ import 'package:fligth_app/presentation/core/constants/colors.dart';
 import 'package:fligth_app/presentation/core/widgets/appbar_text.dart';
 import 'package:fligth_app/presentation/screens/my_ticket_details/widgets/ticket_data.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ticket_widget/ticket_widget.dart';
 
 class MyTicketDetails extends StatelessWidget {
@@ -16,14 +17,14 @@ class MyTicketDetails extends StatelessWidget {
           title: AppBarText(text: '673-843'),
           centerTitle: true,
         ),
-        body: const Center(
+        body:  Center(
           child: TicketWidget(
-            width: 350,
-            height: 550,
+            width: 350.w,
+            height: 570.h,
             isCornerRounded: true,
-            shadow: [BoxShadow(color: AppColors.darkGreyColor)],
-            padding: EdgeInsets.all(20),
-            child: TicketData(),
+            shadow: const [BoxShadow(color: AppColors.blackColor)],
+            padding: const EdgeInsets.all(20),
+            child: const TicketData(),
           ),
         ));
   }

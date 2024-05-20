@@ -27,8 +27,8 @@ class HelpfulInfoImages extends StatelessWidget {
                 borderColor: AppColors.lightBlue,
               ),
               AppContainer(
-                height: 125.h,
-                width: 100.w,
+                height: 120.h,
+                width: 105.w,
                 borderRadius: 10,
                 child: Stack(
                   children: [

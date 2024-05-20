@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/constants/colors.dart';
-import '../../../../core/widgets/padding.dart';
+import '../../../core/constants/colors.dart';
+import '../../../core/widgets/padding.dart';
 
 class FavoritesIconButton extends StatelessWidget {
-  const FavoritesIconButton({super.key});
+   FavoritesIconButton({super.key});
 
   @override
   Widget build(BuildContext context) {
     return PaddingDynamic(
-        top: 50.h,
+        top:  10.h,
         end: 10.w,
         child: CircleAvatar(
           radius: 17,

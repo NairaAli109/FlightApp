@@ -16,13 +16,15 @@ class TicketPrice extends StatelessWidget {
       height: 25.h,
       color: AppColors.primaryColor,
       borderRadius: 50,
-      child: Text(
-        ticketPrice!,
-        textAlign: TextAlign.center,
-        style: TextStyle(
-            fontWeight: FontWeight.w500,
-            fontSize: 12.sp,
-            color: AppColors.secondaryColor
+      child: Center(
+        child: Text(
+          ticketPrice!,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontWeight: FontWeight.w500,
+              fontSize: 12.sp,
+              color: AppColors.secondaryColor
+          ),
         ),
       ),
     );

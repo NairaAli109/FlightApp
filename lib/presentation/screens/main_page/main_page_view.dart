@@ -59,9 +59,7 @@ class _ExploreViewState extends State<ExploreView> {
                 )),
           ),
         )),
-        SizedBox(
-          height: 10.h,
-        ),
+        SizedBox(height: 10.h),
         CustomWhiteContainer(
             height: 235,
             bottomLeftRaduis: 0,
@@ -81,9 +79,7 @@ class _ExploreViewState extends State<ExploreView> {
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
                     ),
-                    SizedBox(
-                      height: 15,
-                    ),
+                    SizedBox(height: 15),
                     HelpfulInfoImages(),
                   ]),
             )),

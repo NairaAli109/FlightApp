@@ -17,7 +17,6 @@ class PilotInfo extends StatelessWidget {
       bottom: 20.h,
       child: AppContainer(
         width: double.infinity,
-        height: 332.h,
         color: AppColors.secondaryColor,
         borderRadius: 30,
         child: PaddingDynamic(
@@ -30,15 +29,15 @@ class PilotInfo extends StatelessWidget {
                   top: 12.h,
                   start: 10.w,
                   end: 10.w,
+                  bottom: 20.h,
                   child: AppContainer(
                       width: 350.w,
-                      height: 244.h,
                       color: AppColors.lightGreyColor,
                       borderRadius: 10,
                       child: PaddingDynamic(
-                        top: 10.h,
+                        top: 20.h,
                         start: 10.w,
-                        bottom: 10.h,
+                        bottom: 20.h,
                         end: 10.w,
                         child: Column(
                           children: [

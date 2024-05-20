@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../air_tours/air_tours_view.dart';
-import '../../air_tours/widgets/air_tours_image_section/favorites_icon_button.dart';
+import 'favorites_icon_button.dart';
 import 'air_tour_details.dart';
 import 'air_tour_plane_image.dart';
 import 'air_tour_text.dart';
@@ -23,17 +23,17 @@ class _AirToursListItemState extends State<AirToursListItem> {
       },
       child:  Column(
         children: [
-          const Stack(
+           Stack(
             alignment: Alignment.bottomLeft,
             children: [
               Stack(
                 alignment: Alignment.topRight,
                 children: [
-                  AirTourPlaneImg(),
+                  const AirTourPlaneImg(),
                   FavoritesIconButton(),
                 ],
               ),
-              AirTourDetails()
+              const AirTourDetails()
             ],
           ),
           SizedBox(height: 10.h),
