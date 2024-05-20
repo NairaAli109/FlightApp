@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:fligth_app/presentation/screens/my_ticket_details/widgets/ticket_details_text.dart';
 import 'package:fligth_app/presentation/screens/my_ticket_details/widgets/ticket_details_title_text.dart';
 import 'package:flutter/material.dart';

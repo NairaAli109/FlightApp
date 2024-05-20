@@ -5,7 +5,7 @@ import '../../../core/constants/colors.dart';
 import '../../../core/widgets/padding.dart';
 
 class FavoritesIconButton extends StatelessWidget {
-   FavoritesIconButton({super.key});
+   const FavoritesIconButton({super.key});
 
   @override
   Widget build(BuildContext context) {

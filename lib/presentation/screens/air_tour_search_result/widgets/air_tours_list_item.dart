@@ -23,17 +23,17 @@ class _AirToursListItemState extends State<AirToursListItem> {
       },
       child:  Column(
         children: [
-           Stack(
+           const Stack(
             alignment: Alignment.bottomLeft,
             children: [
               Stack(
                 alignment: Alignment.topRight,
                 children: [
-                  const AirTourPlaneImg(),
+                  AirTourPlaneImg(),
                   FavoritesIconButton(),
                 ],
               ),
-              const AirTourDetails()
+              AirTourDetails()
             ],
           ),
           SizedBox(height: 10.h),

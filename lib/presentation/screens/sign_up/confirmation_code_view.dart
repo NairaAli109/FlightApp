@@ -3,7 +3,6 @@
 import 'package:fligth_app/presentation/screens/sign_up/widgets/confirmation_code_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pinput/pinput.dart';
 import '../../core/constants/colors.dart';
 import '../../core/widgets/app_button.dart';
 import '../../core/widgets/header_text.dart';

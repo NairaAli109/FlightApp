@@ -1,5 +1,4 @@
-// ignore_for_file: avoid_print, unused_import
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: avoid_print, unused_import, must_be_immutable
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 

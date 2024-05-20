@@ -1,6 +1,4 @@
 import 'package:fligth_app/presentation/core/constants/colors.dart';
-import 'package:fligth_app/presentation/core/widgets/app_button.dart';
-import 'package:fligth_app/presentation/core/widgets/padding.dart';
 import 'package:fligth_app/presentation/screens/logout/widgets/logout_button.dart';
 import 'package:fligth_app/presentation/screens/logout/widgets/logout_text.dart';
 import 'package:flutter/material.dart';

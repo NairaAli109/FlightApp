@@ -1,6 +1,4 @@
-import 'package:fligth_app/presentation/core/widgets/padding.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../my_tickets/widgets/ticket_reservation_date.dart';
 import 'notifications_container.dart';

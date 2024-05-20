@@ -56,6 +56,9 @@ dependencies:
   ticket_widget: ^1.0.2
   barcode_widget: ^2.0.4
 
+  #chat_bot
+  ikchatbot: ^1.0.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

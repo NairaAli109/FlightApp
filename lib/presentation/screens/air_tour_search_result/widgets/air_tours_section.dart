@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../generated/assets.dart';
-import '../../../core/constants/colors.dart';
 import '../../../core/widgets/padding.dart';
-import '../../air_tours/air_tours_view.dart';
 import 'air_tours_list_item.dart';
 
 class AirToursList extends StatelessWidget {
