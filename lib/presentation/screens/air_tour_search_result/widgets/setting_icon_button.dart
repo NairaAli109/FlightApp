@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import '../../../core/widgets/app_button.dart';
 import '../../../core/widgets/padding.dart';
-import '../../main_page/widgets/passengers_Field.dart';
+import '../../main_page/widgets/passengers_field.dart';
 import '../../main_page/widgets/tour_and_date_filed.dart';
 
 class SettingIconButton extends StatelessWidget {

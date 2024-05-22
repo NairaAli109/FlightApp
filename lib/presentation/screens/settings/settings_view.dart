@@ -1,7 +1,6 @@
 import 'package:fligth_app/presentation/core/constants/colors.dart';
 import 'package:fligth_app/presentation/core/widgets/padding.dart';
 import 'package:fligth_app/presentation/screens/settings/widgets/setting_container.dart';
-import 'package:fligth_app/presentation/screens/settings/widgets/switch_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

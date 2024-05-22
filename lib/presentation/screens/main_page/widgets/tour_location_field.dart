@@ -1,50 +1,44 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/constants/colors.dart';
 import '../../../core/widgets/padding.dart';
-import '../../search/search_bottom_sheet_view.dart';
 
-class TourLocationField extends StatefulWidget {
-  const TourLocationField({super.key});
+class TourLocationField extends StatelessWidget {
+  const TourLocationField({
+    super.key,
+    required this.onTap,
+    required this.text,
+    required this.iconData,
+    this.topPadding,
+    this.bottomPadding,
+  });
 
-  @override
-  State<TourLocationField> createState() => _TourLocationFieldState();
-}
-
-class _TourLocationFieldState extends State<TourLocationField> {
-
-  void displayBottomSheet() {
-    showModalBottomSheet(
-        isScrollControlled: true,
-        useSafeArea: true,
-        enableDrag: true,
-        isDismissible: true,
-        context: context,
-        builder: (context) => const SearchBottomSheetView());
-  }
+  final VoidCallback onTap;
+  final String? text;
+  final IconData? iconData;
+  final double? topPadding;
+  final double? bottomPadding;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: PaddingDynamic(
-        top: 15,
-        start: 20,
+        start: 20.w,
+        top: topPadding ?? 0.h,
+        bottom: bottomPadding ?? 0.h,
         child: InkWell(
-          onTap: () {
-            setState(() {
-              displayBottomSheet();
-            });
-          },
+          onTap: onTap,
           child: Row(
             children: [
-              const Icon(Icons.location_on_sharp),
+              Icon(iconData!),
               const SizedBox(width: 10),
               Text(
-                "Where to find an airplane tour?",
+                text!,
                 style: TextStyle(
-                    color: AppColors.lightGrey,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 16),
+                  color: AppColors.lightGrey,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16,
+                ),
               )
             ],
           ),

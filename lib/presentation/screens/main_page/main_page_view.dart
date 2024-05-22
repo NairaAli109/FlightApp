@@ -1,6 +1,6 @@
 import 'package:fligth_app/presentation/core/widgets/custom_white_container.dart';
 import 'package:fligth_app/presentation/screens/main_page/widgets/helpful_info_images.dart';
-import 'package:fligth_app/presentation/screens/main_page/widgets/passengers_Field.dart';
+import 'package:fligth_app/presentation/screens/main_page/widgets/passengers_field.dart';
 import 'package:fligth_app/presentation/screens/main_page/widgets/tour_and_date_filed.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

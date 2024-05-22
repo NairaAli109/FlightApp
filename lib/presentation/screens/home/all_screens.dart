@@ -5,7 +5,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 import '../../core/constants/colors.dart';
 import '../favorites/favorites_view.dart';
-import '../flight/widgets/Flights_view.dart';
+import '../flight/flights_view.dart';
 import '../main_page/main_page_view.dart';
 import '../profile/profile_view.dart';
 
