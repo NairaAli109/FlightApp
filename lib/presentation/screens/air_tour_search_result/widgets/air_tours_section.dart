@@ -20,7 +20,7 @@ class AirToursList extends StatelessWidget {
             itemBuilder: (context, index) => const AirToursListItem(),
             itemCount: 10,
             separatorBuilder: (BuildContext context, int index) =>
-                SizedBox(height: 10.h),
+                SizedBox(height: 20.h),
           )),
     );
   }

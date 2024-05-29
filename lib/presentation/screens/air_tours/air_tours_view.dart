@@ -1,3 +1,4 @@
+import 'package:fligth_app/presentation/core/widgets/appbar_text.dart';
 import 'package:fligth_app/presentation/screens/air_tours/widgets/book_button.dart';
 import 'package:fligth_app/presentation/screens/air_tours/widgets/condition_text.dart';
 import 'package:fligth_app/presentation/screens/air_tours/widgets/customer_reviews_section/customers_review_section.dart';
@@ -13,7 +14,10 @@ class AirToursView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[100],
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: AppBarText(text: 'Novosibirsk - Baikal'),
+        centerTitle: true,
+      ),
       body: const SingleChildScrollView(
         child: SizedBox(
             width: double.infinity,

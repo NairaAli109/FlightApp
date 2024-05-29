@@ -6,7 +6,7 @@ class AirTourText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Text(
-      "Cessna 172 familiarization flight from Kronstadt",
+      "Novosibirsk - Baikal",
       style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
     );
   }

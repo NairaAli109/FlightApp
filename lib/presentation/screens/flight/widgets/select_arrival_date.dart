@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/constants/colors.dart';
 import '../../../core/widgets/padding.dart';
+import '../../../core/widgets/tour_single_container.dart';
+import '../../../core/widgets/date_picker_field.dart';
 
-class DatePickerFiled extends StatefulWidget {
-  const DatePickerFiled({super.key});
+class SelectArrivalDate extends StatefulWidget {
+  const SelectArrivalDate({super.key});
 
   @override
-  State<DatePickerFiled> createState() => _DatePickerFiledState();
+  State<SelectArrivalDate> createState() => _SelectArrivalDateState();
 }
 
-class _DatePickerFiledState extends State<DatePickerFiled> {
-
+class _SelectArrivalDateState extends State<SelectArrivalDate> {
   DateTime selectedDate = DateTime.now();
 
   Future<void> _selectDate(BuildContext context) async {
@@ -28,33 +28,18 @@ class _DatePickerFiledState extends State<DatePickerFiled> {
     }
   }
 
-
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return TourSingleContainer(
       child: PaddingDynamic(
-        bottom: 15.h,
-        start: 22.w,
-        child: InkWell(
+        top: 12.h,
+        child: DatePickerFiled(
           onTap: () {
             setState(() {
               _selectDate(context);
             });
           },
-          child: Row(
-            children: [
-              const Icon(Icons.date_range_sharp),
-              const SizedBox(width: 10),
-              Text(
-                // "Date",
-                "${selectedDate.toLocal()}".split(' ')[0],
-                style: TextStyle(
-                    color: AppColors.lightGrey,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 16),
-              )
-            ],
-          ),
+          text: 'Date of arrival',
         ),
       ),
     );

@@ -1,6 +1,8 @@
+import 'package:fligth_app/presentation/core/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../air_tours/air_tours_view.dart';
+import '../../my_tickets/widgets/ticket_price.dart';
 import 'favorites_icon_button.dart';
 import 'air_tour_details.dart';
 import 'air_tour_plane_image.dart';
@@ -22,6 +24,7 @@ class _AirToursListItemState extends State<AirToursListItem> {
             MaterialPageRoute(builder: (context) => const AirToursView()));
       },
       child:  Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
            const Stack(
             alignment: Alignment.bottomLeft,
@@ -37,7 +40,22 @@ class _AirToursListItemState extends State<AirToursListItem> {
             ],
           ),
           SizedBox(height: 10.h),
-          const AirTourText()
+          const AirTourText(),
+          SizedBox(height: 10.h),
+          Row(
+            children: [
+              Text(
+                "Price per passenger",
+                style: TextStyle(
+                  fontSize:12.sp ,
+                  fontWeight: FontWeight.w400,
+                  color: AppColors.darkGreyColor
+                ),
+              ),
+              const Spacer(),
+              TicketPrice(ticketPrice: '2000 ₽',),
+            ],
+          )
         ],
       ),
     );

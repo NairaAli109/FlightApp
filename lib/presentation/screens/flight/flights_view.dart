@@ -3,11 +3,11 @@ import 'package:fligth_app/presentation/core/widgets/header_text.dart';
 import 'package:fligth_app/presentation/core/widgets/padding.dart';
 import 'package:fligth_app/presentation/screens/flight/widgets/find_button.dart';
 import 'package:fligth_app/presentation/screens/flight/widgets/from_to_where_location_section.dart';
+import 'package:fligth_app/presentation/screens/flight/widgets/select_arrival_date.dart';
+import 'package:fligth_app/presentation/screens/flight/widgets/select_departure_date.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../core/widgets/tour_single_container.dart';
-import '../main_page/widgets/date_picker_field.dart';
 import '../main_page/widgets/passengers_Field.dart';
 
 class FlightsView extends StatelessWidget {
@@ -30,19 +30,9 @@ class FlightsView extends StatelessWidget {
                 SizedBox(height: 25.h),
                 const FromToWhereLocationSection(),
                 SizedBox(height: 15.h),
-                TourSingleContainer(
-                  child: PaddingDynamic(
-                    top: 12.h,
-                    child: const DatePickerFiled(),
-                  ),
-                ),
+                const SelectDepartureDate(),
                 SizedBox(height: 15.h),
-                TourSingleContainer(
-                  child: PaddingDynamic(
-                    top: 12.h,
-                    child: const DatePickerFiled(),
-                  ),
-                ),
+                const SelectArrivalDate(),
                 SizedBox(height: 15.h),
                 const PassengersField(),
                 SizedBox(height: 25.h),

@@ -30,10 +30,10 @@ class FlightInfo extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              BodyHeaderText(text: 'Departure Time'),
+              FlightDurationButtons(text: '7:00'),
               BodyHeaderText(text: 'Flight Duration'),
               FlightDurationButtons(text: '20 min'),
-              BodyHeaderText(text: 'Start of Flight'),
-              FlightDurationButtons(text: '7:00'),
               BodyHeaderText(text: 'Flight Route'),
               const FlightRouteAirFieldContainer(),
               const FlightTourStepper(),
